@@ -11,12 +11,15 @@ function SectionUserInput() {
 	});
 
 	function updateInput(event) {
-		setInputsValues({
-			...prevValues,
-			[event.target.name]: event.target.value,
+		setInputsValues((prevValues) => {
+			return {
+				...prevValues,
+				[event.target.name]: event.target.value,
+			};
 		});
 	}
 
+	console.log(inputsValues);
 	return (
 		<section id='user-input'>
 			<div className='input-group'>
@@ -27,6 +30,7 @@ function SectionUserInput() {
 						name='initialInvestment'
 						required
 						value={inputsValues.initialInvestment}
+						onChange={updateInput}
 					/>
 				</div>
 
@@ -37,6 +41,7 @@ function SectionUserInput() {
 						name='annualInvestment'
 						required
 						value={inputsValues.annualInvestment}
+						onChange={updateInput}
 					/>
 				</div>
 			</div>
@@ -48,6 +53,7 @@ function SectionUserInput() {
 						name='expectedReturn'
 						required
 						value={inputsValues.expectedReturn}
+						onChange={updateInput}
 					/>
 				</div>
 				<div>
@@ -57,6 +63,7 @@ function SectionUserInput() {
 						name='duration'
 						required
 						value={inputsValues.duration}
+						onChange={updateInput}
 					/>
 				</div>
 			</div>
