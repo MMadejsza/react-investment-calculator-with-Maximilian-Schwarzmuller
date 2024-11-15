@@ -1,7 +1,14 @@
+import React, {useState} from 'react';
+import Header from './components/Header';
+import SectionUserInput from './components/SectionUserInput';
+
 function App() {
-  return (
-    <h1>React Investment Calculator</h1>
-  )
+	return (
+		<>
+			<Header />
+			<SectionUserInput />
+		</>
+	);
 }
 
-export default App
+export default App;
