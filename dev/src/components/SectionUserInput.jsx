@@ -1,24 +1,7 @@
 import React, {useState} from 'react';
 
-function SectionUserInput() {
-	const [inputsValues, setInputsValues] = useState({
-		// fill up with default first
-		initialInvestment: 1000,
-		annualInvestment: 1000,
-		// %
-		expectedReturn: 6,
-		duration: 10,
-	});
-
-	function updateInput(event) {
-		setInputsValues((prevValues) => {
-			return {
-				...prevValues,
-				[event.target.name]: event.target.value,
-			};
-		});
-	}
-
+function SectionUserInput({inputsValuesInitial, onInsert}) {
+	let inputsValues = inputsValuesInitial;
 	console.log(inputsValues);
 	return (
 		<section id='user-input'>
@@ -30,7 +13,7 @@ function SectionUserInput() {
 						name='initialInvestment'
 						required
 						value={inputsValues.initialInvestment}
-						onChange={updateInput}
+						onChange={onInsert}
 					/>
 				</div>
 
@@ -41,7 +24,7 @@ function SectionUserInput() {
 						name='annualInvestment'
 						required
 						value={inputsValues.annualInvestment}
-						onChange={updateInput}
+						onChange={onInsert}
 					/>
 				</div>
 			</div>
@@ -53,7 +36,7 @@ function SectionUserInput() {
 						name='expectedReturn'
 						required
 						value={inputsValues.expectedReturn}
-						onChange={updateInput}
+						onChange={onInsert}
 					/>
 				</div>
 				<div>
@@ -63,7 +46,7 @@ function SectionUserInput() {
 						name='duration'
 						required
 						value={inputsValues.duration}
-						onChange={updateInput}
+						onChange={onInsert}
 					/>
 				</div>
 			</div>
