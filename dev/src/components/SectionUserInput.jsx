@@ -1,7 +1,14 @@
 import React, {useState} from 'react';
 
 function SectionUserInput() {
-	const [state, setstate] = useState();
+	const [inputsValues, setstate] = useState({
+		// fill up with default first
+		initialInvestment: 1000,
+		annualInvestment: 1000,
+		// %
+		expectedReturn: 6,
+		duration: 10,
+	});
 
 	return (
 		<section id='user-input'>
