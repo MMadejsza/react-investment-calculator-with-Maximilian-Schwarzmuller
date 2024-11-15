@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 function SectionUserInput() {
-	const [inputsValues, setstate] = useState({
+	const [inputsValues, setInputsValues] = useState({
 		// fill up with default first
 		initialInvestment: 1000,
 		annualInvestment: 1000,
@@ -9,6 +9,13 @@ function SectionUserInput() {
 		expectedReturn: 6,
 		duration: 10,
 	});
+
+	function updateInput(event) {
+		setInputsValues({
+			...prevValues,
+			[event.target.name]: event.target.value,
+		});
+	}
 
 	return (
 		<section id='user-input'>
@@ -19,6 +26,7 @@ function SectionUserInput() {
 						type='number'
 						name='initialInvestment'
 						required
+						value={inputsValues.initialInvestment}
 					/>
 				</div>
 
@@ -28,6 +36,7 @@ function SectionUserInput() {
 						type='number'
 						name='annualInvestment'
 						required
+						value={inputsValues.annualInvestment}
 					/>
 				</div>
 			</div>
@@ -38,6 +47,7 @@ function SectionUserInput() {
 						type='number'
 						name='expectedReturn'
 						required
+						value={inputsValues.expectedReturn}
 					/>
 				</div>
 				<div>
@@ -46,6 +56,7 @@ function SectionUserInput() {
 						type='number'
 						name='duration'
 						required
+						value={inputsValues.duration}
 					/>
 				</div>
 			</div>
