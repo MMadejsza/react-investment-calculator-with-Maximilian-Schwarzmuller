@@ -16,7 +16,6 @@ function SectionUserInput({inputsValuesInitial, onInsert}) {
 						onChange={onInsert}
 					/>
 				</div>
-
 				<div>
 					<label htmlFor='annualInvestment'>Annual Investment</label>
 					<input

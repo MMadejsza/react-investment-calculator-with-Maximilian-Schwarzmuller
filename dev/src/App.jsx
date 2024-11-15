@@ -6,8 +6,8 @@ import Results from './components/Results';
 function App() {
 	const [inputsValues, setInputsValues] = useState({
 		// fill up with default first
-		initialInvestment: 1000,
-		annualInvestment: 1000,
+		initialInvestment: 15000,
+		annualInvestment: 1200,
 		// %
 		expectedReturn: 6,
 		duration: 10,
@@ -17,7 +17,8 @@ function App() {
 		setInputsValues((prevValues) => {
 			return {
 				...prevValues,
-				[event.target.name]: event.target.value,
+				// "+" is a shortcut to converse string to a number
+				[event.target.name]: +event.target.value,
 			};
 		});
 	}
