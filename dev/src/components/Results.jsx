@@ -4,7 +4,7 @@ function Results({values}) {
 	const resultData = calculateInvestmentResults(values);
 	const initialInvestment =
 		resultData[0].valueEndOfYear - resultData[0].interest - resultData[0].annualInvestment;
-	console.log(resultData);
+
 	return (
 		<>
 			<table

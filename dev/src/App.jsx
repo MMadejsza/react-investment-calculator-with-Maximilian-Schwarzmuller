@@ -13,6 +13,9 @@ function App() {
 		duration: 10,
 	});
 
+	const inputIsValid = inputsValues.duration > 0;
+	const warning = <p className='center'>Duration must be greater than 0!</p>;
+
 	function updateInput(event) {
 		setInputsValues((prevValues) => {
 			return {
@@ -30,7 +33,7 @@ function App() {
 				onInsert={updateInput}
 				inputsValuesInitial={inputsValues}
 			/>
-			<Results values={inputsValues} />
+			{inputIsValid ? <Results values={inputsValues} /> : warning}
 		</>
 	);
 }
